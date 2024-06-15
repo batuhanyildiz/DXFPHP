@@ -29,6 +29,7 @@ use DXFighter\lib\LWPolyline;
 use DXFighter\lib\Polyline;
 use DXFighter\lib\Spline;
 use DXFighter\lib\Text;
+use DXFighter\lib\MText;
 
 /**
  * Returns the class name, used for auto loading libraries
