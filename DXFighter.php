@@ -119,7 +119,7 @@ class DXFighter {
    */
   private function addBasicObjects() {
     $this->header->addItem(new SystemVariable("acadver", array(1 => "AC1012")));
-    $this->header->addItem(new SystemVariable("dwgcodepage", array(3 => "ANSI_1252")));
+    $this->header->addItem(new SystemVariable("dwgcodepage", array(3 => "ANSI_1254")));
     $this->header->addItem(new SystemVariable("insbase", array('point' => array(0, 0, 0))));
     $this->header->addItem(new SystemVariable("extmin", array('point' => array(0, 0, 0))));
     $this->header->addItem(new SystemVariable("extmax", array('point' => array(0, 0, 0))));
@@ -290,10 +290,10 @@ class DXFighter {
    * @return $absolutePath
    */
   public function saveAs($fileName) {
-    $fh = fopen($fileName, 'w');
-    fwrite($fh, iconv("UTF-8", "WINDOWS-1252", $this->toString(FALSE)));
-    fclose($fh);
-    return realpath($fileName);
+        $fh = fopen($fileName, 'w');
+        fwrite($fh, iconv("UTF-8", "WINDOWS-1254", $this->toString(FALSE)));
+        fclose($fh);
+        return realpath($fileName);
   }
 
   private function read($path, $move = [0,0,0], $rotate = 0) {
